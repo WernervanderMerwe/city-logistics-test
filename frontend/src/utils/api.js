@@ -20,7 +20,7 @@ const api = create({
  */
 export const getData = async (route, params) => {
   const result = await api.get(route, params);
-  if (!result.ok)
+  if (!result.ok && process.env.NODE_ENV === "development")
     return alert("Did you start the API server with Visual Studio?");
 
   return result;
