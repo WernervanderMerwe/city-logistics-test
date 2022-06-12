@@ -39,7 +39,7 @@ function Jokes({ jokes }) {
               <div key={index} className="relative">
                 <img src={imports[index]} alt="Epic Chuck Norris Background" />
 
-                <span className="absolute left-1/2 bottom-10 -translate-x-1/2 w-5/6 p-2 rounded-lg text-lg font-semibold bg-black text-white">
+                <span className="absolute left-1/2 bottom-10 -translate-x-1/2 w-5/6 p-2 rounded-lg text-2xl font-semibold bg-black text-white">
                   {joke.value}
                 </span>
               </div>

@@ -48,7 +48,7 @@ export function RandomJokeModal({ isVisible, setIsVisible }) {
       <p className="text-xl font-bold">Fact</p>
       <br />
       <Button
-        className="bg-orange-400 hover:bg-orange-600"
+        className="bg-orange-400 hover:bg-orange-600 px-2"
         onClick={() => setIsVisible(false)}
         label="Close"
       />
