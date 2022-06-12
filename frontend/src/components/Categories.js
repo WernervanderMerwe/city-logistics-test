@@ -1,5 +1,7 @@
 import React from "react";
+
 import { getData } from "../utils/api";
+import { Button } from "./Button";
 
 const useChuckNorrisCategories = (handleClick) => {
   const [categories, setCategories] = React.useState([]);
@@ -21,22 +23,21 @@ const useChuckNorrisCategories = (handleClick) => {
   };
 };
 
-function Categories({ handleClick }) {
+function Categories({ handleClick, selectedCategory }) {
   const { isFetching, categories } = useChuckNorrisCategories(handleClick);
 
   return (
-    <div className="categories border border-orange-500 rounded-lg text-lg sm:text-2xl font-bold flex justify-center p-4 flex-wrap">
+    <div className="categories border border-orange-400 rounded-lg flex justify-center p-4 flex-wrap">
       <Loading isFetching={isFetching}>
-        <div className="grid grid-flow-row gap-3 grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 ">
+        <div className="grid grid-flow-row gap-3 grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
           {categories.length > 0 ? (
             categories.map((i) => (
-              <button
-                className="bg-blue-400 rounded-md p-1 hover:bg-blue-600"
+              <Button
                 key={i}
                 onClick={() => handleClick(i)}
-              >
-                {i.charAt(0).toUpperCase() + i.slice(1)}
-              </button>
+                className={selectedCategory === i ? "bg-blue-500" : ""}
+                label={i.charAt(0).toUpperCase() + i.slice(1)}
+              />
             ))
           ) : (
             <p>No categories found, there must be a problem!</p>

@@ -9,6 +9,7 @@ import { getData } from "./utils/api";
 
 function App() {
   const [listOfJokes, setListOfJokes] = React.useState([]);
+  const [selectedCategory, setSelectedCategory] = React.useState("");
   const [isVisible, setIsVisible] = React.useState(false);
 
   const handleCategorySelection = async (category) => {
@@ -18,6 +19,7 @@ function App() {
         jokeLimit: 4,
       });
       setListOfJokes(rawJokeResponse.data);
+      setSelectedCategory(category);
     } catch (error) {
       console.error("there was an error with the request");
     }
@@ -26,7 +28,10 @@ function App() {
   return (
     <div className="App container h-screen mx-auto bg-slate-50 flex flex-col p-6 gap-6">
       <RandomBtn onClick={() => setIsVisible(true)} />
-      <Categories handleClick={handleCategorySelection}></Categories>
+      <Categories
+        selectedCategory={selectedCategory}
+        handleClick={handleCategorySelection}
+      ></Categories>
       <Jokes jokes={listOfJokes}></Jokes>
       <RandomJokeModal isVisible={isVisible} setIsVisible={setIsVisible} />
     </div>

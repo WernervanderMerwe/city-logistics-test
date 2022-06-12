@@ -4,11 +4,33 @@ Clone the repository at [https://github.com/WernervanderMerwe/city-logistics-tes
 
 By using the following commands in your Visual Studio Code Terminal
 
+## Clone the repo
+
 ```
  git clone https://github.com/WernervanderMerwe/city-logistics-test.git
- cd frontend
- yarn install
 ```
+
+## Navigate to the repo after cloning
+
+```
+ cd frontend
+```
+
+## Install your dependcies
+
+```
+ yarn
+```
+
+## Start your frontend application
+
+```
+ yarn start
+```
+
+Now you'll need to start your c# backend, do so by opening the api project in the root of this repo with visual studo and start the debugger as you would normally.
+
+**NOTE** this project is running dotnet core 6.0, please make sure to download [the dotnet core 6 sdk first!](https://dotnet.microsoft.com/en-us/download)
 
 # Running the App
 
@@ -21,11 +43,22 @@ Alternatively with Visual Studio selected press `Shift + F5`
 
 If you have already changed directory to `frontend` type in `yarn start` in the Terminal
 
-If it is a fresh startup with Visual Studio Code then type in
+If it is a fresh startup with Visual Studio Code then the following type in the terminal
 
 ```
 cd frontend
 yarn start
 ```
 
-## **Note** You have to start the Api server before the react app will communicate with the chucknorris.io API
+### **Note** You have to start the Api server before the react app will communicate with the chucknorris.io API
+
+## **Additional**
+
+Please take a look at some of my deployed applications to see my competencies below are a few links
+
+| Website                                                                        | Repo                                                                          |
+| ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| [My favorite project](https://forkify-werner.netlify.app)                      | [github](https://github.com/WernervanderMerwe/forkify-mvc-lecturer-built-api) |
+| [another interview test using Vue.js](https://bonline-test-werner.netlify.app) | [github](https://github.com/WernervanderMerwe/bonline-test)                   |
+
+If you like the color green, have a look at my commit history overview to see how `committed` i am [https://github.com/WernervanderMerwe](https://github.com/WernervanderMerwe)

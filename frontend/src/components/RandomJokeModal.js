@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import { Button } from "./Button";
 
 import { getData } from "../utils/api";
 
@@ -12,6 +13,7 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     borderRadius: "0.5rem",
+    margin: "10px",
   },
 };
 
@@ -45,12 +47,11 @@ export function RandomJokeModal({ isVisible, setIsVisible }) {
       <p className="font-semibold">...</p>
       <p className="text-xl font-bold">Fact</p>
       <br />
-      <button
-        className="bg-orange-400 rounded-md p-2"
+      <Button
+        className="bg-orange-400 hover:bg-orange-600"
         onClick={() => setIsVisible(false)}
-      >
-        Close
-      </button>
+        label="Close"
+      />
     </Modal>
   );
 }
