@@ -13,7 +13,7 @@ By using the following commands in your Visual Studio Code Terminal
 ## Navigate to the repo after cloning
 
 ```
- cd frontend
+cd .\city-logistics-test\frontend\
 ```
 
 ## Install your dependcies
