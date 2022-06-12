@@ -42,7 +42,7 @@ namespace Api.Controllers
             var resultJokes = new List<ChuckNorrisRandomViewModel>();
             var jokesToGetCount = jokeLimit;
             var timesTried = 0;
-            var timesToTry = 20;
+            var timesToTry = 5;
 
             do
             {
@@ -51,13 +51,13 @@ namespace Api.Controllers
                 {
                     var asyncResponse = ChuckNorrisCategoryJoke(category);
                     jokeTasks.Add(asyncResponse);
-                    timesTried++;
                 }
-                
+
                 var jokes = await Task.WhenAll(jokeTasks);
                 var uniqueJokes = jokes.DistinctBy(i => i.value);
                 resultJokes = resultJokes.Concat(uniqueJokes).DistinctBy(i => i.value).ToList();
                 jokesToGetCount = jokeLimit - resultJokes.Count();
+                timesTried++;
 
             } while (jokesToGetCount > 0 && timesTried < timesToTry);
            
